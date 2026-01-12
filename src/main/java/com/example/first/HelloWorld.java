@@ -5,6 +5,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class HelloWorld {
+    @GetMapping("/")
+    public String home() {
+        return "Spring Boot is running successfully!";
+    }
     @GetMapping("/hello")
     String hello(){
         return "Hello world";
