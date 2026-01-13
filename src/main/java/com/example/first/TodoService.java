@@ -35,9 +35,7 @@ public class TodoService {
     public void deleteid(Long id){
         todorepository.delete(finds(id));
     }
-    public void deleteall(Todo todo){
-        todorepository.delete(todo)
-    }
+
     }
 
 
