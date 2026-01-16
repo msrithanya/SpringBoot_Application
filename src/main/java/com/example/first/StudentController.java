@@ -8,14 +8,22 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+
 public class StudentController {
 @Autowired
+
 StudentRepository studentrepository;
+
     @PostMapping
     public Student create(@RequestBody Student student ){
         return studentrepository.save(student);
     }
     //pagination
+
+    @GetMapping("{id}")
+    public Student  displaybyId(@PathVariable Long id){
+        return studentrepository.getReferenceById(id);
+    }
 
     @GetMapping("/pagination")
     public Page<Student> display(@RequestParam int page,@RequestParam int size) {
