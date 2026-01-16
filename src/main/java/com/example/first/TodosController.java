@@ -43,10 +43,6 @@ public class TodosController {
     public void delete(@PathVariable Long id){
         todoservice.deleteid(id);
     }
-    @DeleteMapping
-    public void deletetodo(Todo todo){
-        todoservice.deleteall(todo);
-    }
     @GetMapping("/getall")
     public List<Todo> all(){
         return todoservice.getall();
